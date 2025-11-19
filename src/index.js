@@ -161,9 +161,9 @@ class linkedList {
 
         while (this.pointer.nextNode != null) {
 
-        console.log(this.pointer.nextNode);
+            console.log(this.pointer.nextNode);
 
-        this.pointer = this.pointer.nextNode;
+            this.pointer = this.pointer.nextNode;
 
         }
 
@@ -205,6 +205,32 @@ class linkedList {
          
     }
 
+    contains(value) {
+
+        if (!this.head) {
+            return false;
+        }
+
+        this.pointer = this.head;
+        
+        while (this.pointer != null) {
+            
+            if (this.pointer.value == value) {
+                return true
+            }
+
+            this.pointer = this.pointer.nextNode;
+
+        }
+
+        console.log(this.pointer);
+        
+
+        return false
+        
+
+    }
+
 };
 
 let lannisters = new linkedList('House Lannister', null);
@@ -225,9 +251,10 @@ console.log(lannisters.size());
 // console.log(lannisters.tail());
 // console.log(lannisters.at(0));
 
-console.log(lannisters.pop());
+console.log(lannisters.contains('Tyrion'));
+// console.log(lannisters.pop());
 
-console.log(lannisters.size());
+// console.log(lannisters.size());
 
 
 // console.log(lannisters);
