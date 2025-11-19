@@ -195,6 +195,16 @@ class linkedList {
 
     }
 
+    pop() {
+        
+        this.pointer = this.at(this.size() - 1);
+
+        this.pointer.nextNode = null;
+
+        return 'Tail popped!'
+         
+    }
+
 };
 
 let lannisters = new linkedList('House Lannister', null);
@@ -213,7 +223,11 @@ lannisters.append('Tyrion');
 
 console.log(lannisters.size());
 // console.log(lannisters.tail());
-console.log(lannisters.at(0));
+// console.log(lannisters.at(0));
+
+console.log(lannisters.pop());
+
+console.log(lannisters.size());
 
 
 // console.log(lannisters);
