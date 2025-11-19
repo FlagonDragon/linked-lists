@@ -171,6 +171,30 @@ class linkedList {
         
     }
 
+    at(index) {
+
+        if (index > this.size() || index < 1) {
+            return "Node doesn't exist";
+        }
+
+        if (this.head.nextNode == null) {
+            return this.head;
+        }
+
+        this.pointer = this.head;
+
+        for (let i = 1; i < index; i++) {
+            
+            console.log(this.pointer);
+            
+            this.pointer = this.pointer.nextNode;
+
+        }
+
+        return this.pointer;
+
+    }
+
 };
 
 let lannisters = new linkedList('House Lannister', null);
@@ -187,8 +211,9 @@ lannisters.append('Tyrion');
 // console.log(lannisters.head.nextNode.nextNode.nextNode);
 // console.log(lannisters.head.nextNode.nextNode.nextNode.nextNode);
 
-// console.log(lannisters.size());
-console.log(lannisters.tail());
+console.log(lannisters.size());
+// console.log(lannisters.tail());
+console.log(lannisters.at(0));
 
 
 // console.log(lannisters);
