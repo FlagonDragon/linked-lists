@@ -223,11 +223,39 @@ class linkedList {
 
         }
 
-        console.log(this.pointer);
-        
-
         return false
+
+    }
+
+    finds(value) {
+
+        if (!this.head) {
+            return 'No value';
+        }
+
+        const length = this.size()
         
+        this.pointer = this.head
+
+        console.log(this.head);
+        
+        for (let i = 1; i <= length; i++) {
+            
+            console.log(this.pointer);
+
+            if (this.pointer.value == value) {
+                console.log(value);
+                console.log(this.pointer);
+                console.log(i);
+                
+                return i;
+            }
+                
+            this.pointer = this.pointer.nextNode;
+
+        }
+
+        return 'No value';
 
     }
 
@@ -252,6 +280,7 @@ console.log(lannisters.size());
 // console.log(lannisters.at(0));
 
 console.log(lannisters.contains('Tyrion'));
+console.log(lannisters.finds('Tyrion'));
 // console.log(lannisters.pop());
 
 // console.log(lannisters.size());
