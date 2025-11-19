@@ -123,32 +123,73 @@ class linkedList {
 
     }
 
+    size() {
+
+        if (!this.head) {
+            return 0;
+        }
+        
+        this.pointer = this.head
+        
+        console.log(this.pointer);
+
+        let nodeCount = 1; 
+
+        while (this.pointer.nextNode != null) {
+
+            console.log(this.pointer.nextNode);
+
+            this.pointer = this.pointer.nextNode;
+
+            nodeCount += 1;
+
+        }
+
+        return nodeCount;
+
+    }
+
+    returnHead() {
+        return this.head;
+    }
+
+    tail() {
+
+        if (!this.head) {
+            return 'Empty list';
+        }
+
+        while (this.pointer.nextNode != null) {
+
+        console.log(this.pointer.nextNode);
+
+        this.pointer = this.pointer.nextNode;
+
+        }
+
+        return this.pointer;
+        
+    }
+
 };
 
 let lannisters = new linkedList('House Lannister', null);
 
-lannisters.prepend('Tyrion');
-lannisters.append('Tywin');
-lannisters.append('Joanna');
-
-console.log(lannisters.head);
-console.log(lannisters.head.nextNode);
-console.log(lannisters.head.nextNode.nextNode);
-
-lannisters.prepend('Jaime');
-
-console.log(lannisters.head);
-console.log(lannisters.head.nextNode);
-console.log(lannisters.head.nextNode.nextNode);
-console.log(lannisters.head.nextNode.nextNode.nextNode);
-
+lannisters.prepend('Joanna');
 lannisters.append('Cersei');
+lannisters.append('Jaime');
+lannisters.prepend('Tywin');
+lannisters.append('Tyrion');
 
-console.log(lannisters.head);
-console.log(lannisters.head.nextNode);
-console.log(lannisters.head.nextNode.nextNode);
-console.log(lannisters.head.nextNode.nextNode.nextNode);
-console.log(lannisters.head.nextNode.nextNode.nextNode.nextNode);
+// console.log(lannisters.head);
+// console.log(lannisters.head.nextNode);
+// console.log(lannisters.head.nextNode.nextNode);
+// console.log(lannisters.head.nextNode.nextNode.nextNode);
+// console.log(lannisters.head.nextNode.nextNode.nextNode.nextNode);
+
+// console.log(lannisters.size());
+console.log(lannisters.tail());
+
 
 // console.log(lannisters);
 
