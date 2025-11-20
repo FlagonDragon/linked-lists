@@ -256,33 +256,21 @@ class linkedList {
 
     }
 
+    removeAt(index) {
+
+        const length = this.size()
+        
+        if (index < 1 || index > length) {
+            return 'Invalid index!'
+        }
+
+        this.at(index - 1).nextNode = this.at(index - 1).nextNode.nextNode;
+
+        return 'Node '+index+' was removed';
+
+    }
+
 };
-
-let lannisters = new linkedList('House Lannister', null);
-
-lannisters.prepend('Joanna');
-lannisters.append('Cersei');
-lannisters.append('Jaime');
-lannisters.prepend('Tywin');
-lannisters.append('Tyrion');
-
-console.log(lannisters.insertAt('Kevan', 0));
-console.log(lannisters.insertAt('Gerion', 1));
-console.log(lannisters.insertAt('Tygett', 4));
-console.log(lannisters.insertAt('Kevan', 8));
-console.log(lannisters.insertAt('Genna', 10));
-
-
-
-// console.log(lannisters.size());
-// console.log(lannisters.tail());
-// console.log(lannisters.at(0));
-
-// console.log(lannisters.contains('Tyrion'));
-// console.log(lannisters.finds('Tyrion'));
-// console.log(lannisters.pop());
-
-console.log(lannisters.toString());
 
 export default linkedList;
 
