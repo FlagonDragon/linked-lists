@@ -82,13 +82,13 @@ class linkedList {
         
         this.pointer = this.head;
         
-        console.log(this.pointer);
+        // console.log(this.pointer);
 
         let nodeCount = 1; 
 
         while (this.pointer.nextNode != null) {
 
-            console.log(this.pointer.nextNode);
+            // console.log(this.pointer.nextNode);
 
             this.pointer = this.pointer.nextNode;
 
@@ -224,6 +224,38 @@ class linkedList {
 
     }
 
+    insertAt(value, index) {
+
+        const length = this.size()
+
+        console.log(length);
+        
+        if (index < 1 || index > length + 1) {
+            return 'Invalid index!'
+        }
+
+        if (index == 1) {
+
+            this.prepend(value);
+
+        } else if (index == length) {
+
+            this.at(index - 1).nextNode = new node(value, this.at(index));
+
+        } else if (index == length + 1) {
+
+            this.append(value);
+
+        } else {
+
+        this.at(index - 1).nextNode = new node(value, this.at(index));
+
+        }
+
+        return 'value added at node '+index+': ' +value;
+
+    }
+
 };
 
 let lannisters = new linkedList('House Lannister', null);
@@ -234,8 +266,15 @@ lannisters.append('Jaime');
 lannisters.prepend('Tywin');
 lannisters.append('Tyrion');
 
+console.log(lannisters.insertAt('Kevan', 0));
+console.log(lannisters.insertAt('Gerion', 1));
+console.log(lannisters.insertAt('Tygett', 4));
+console.log(lannisters.insertAt('Kevan', 8));
+console.log(lannisters.insertAt('Genna', 10));
 
-console.log(lannisters.size());
+
+
+// console.log(lannisters.size());
 // console.log(lannisters.tail());
 // console.log(lannisters.at(0));
 
