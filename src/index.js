@@ -230,7 +230,7 @@ class linkedList {
     finds(value) {
 
         if (!this.head) {
-            return 'No value';
+            return 'Value not found';
         }
 
         const length = this.size()
@@ -255,7 +255,31 @@ class linkedList {
 
         }
 
-        return 'No value';
+        return 'Value not found';
+
+    }
+
+    toString() {
+
+        if (!this.head) {
+            return 'Empty list';
+        }
+        
+        this.pointer = this.head
+
+        let myString = '';
+        
+        while (this.pointer.nextNode != null) {
+          
+            myString += `( ${this.pointer.value} ) -> `
+                
+            this.pointer = this.pointer.nextNode;
+
+        }
+
+        myString += `( ${this.pointer.value} )`
+
+        return myString;
 
     }
 
@@ -279,11 +303,12 @@ console.log(lannisters.size());
 // console.log(lannisters.tail());
 // console.log(lannisters.at(0));
 
-console.log(lannisters.contains('Tyrion'));
-console.log(lannisters.finds('Tyrion'));
+// console.log(lannisters.contains('Tyrion'));
+// console.log(lannisters.finds('Tyrion'));
 // console.log(lannisters.pop());
 
 // console.log(lannisters.size());
+console.log(lannisters.toString());
 
 
 // console.log(lannisters);
